@@ -33,7 +33,10 @@ bot.on("ready", async () => {
     }, 10000)
 });
 
-
+      const swearWords = ["fuck","tering","gvd","dome","omg","dood","sterf","rip","homo","h0mo","hom0", "kanker", "potver", "fack", "f*ck", "r.i.p.", "kut", "dick", "wtf", "tyfus", "godverdomme", "g0dverd0mme", "g0dverdomme"];
+      if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+          message.delete();
+        }
 
 bot.on("message", async message => {
 
