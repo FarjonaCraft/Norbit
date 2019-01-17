@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
   let more1 = new Discord.RichEmbed()
   .setTitle(`ERROR: Its not possible to delete more than 99 messages!`)
   .setColor("RED");  
-  if (!args[0] > 99) return message.channel.send(more1);
+  if (args[0] > 99) return message.channel.send(more1).then(msg => msg.delete(5000));
 if (Number.isInteger(parseInt(args[0]))) {
   var amout = parseInt(args[0]) + 1;
   message.channel.bulkDelete(amout).then(() => {
