@@ -40,27 +40,12 @@ jsfile.forEach((f, i) =>{
 
   bot.commands.set(props.help.name, props);
 
-  let statuses = ['patreon.com/norbit | >help', 'Invite me for more | >invite'];
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-    setInterval(function() {
-      let status = statuses[Math.floor(Math.random()*statuses.length)];
-      bot.user.setPresence({ game: { name: status}, status: 'online'});
-      bot.user.setPresence({ activity: { name: status}, status: 'online'});
-    }, 10000)
-});
 });
 
 
-let statuses = ['patreon.com/norbit | >help', 'Invite me for more | >invite'];
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-    setInterval(function() {
-      let status = statuses[Math.floor(Math.random()*statuses.length)];
-      bot.user.setPresence({ game: { name: status}, status: 'online'});
-      bot.user.setPresence({ activity: { name: status}, status: 'online'});
-    }, 10000)
+
 });
+
 
 
 let statuses = ['patreon.com/norbit | >help', 'Invite me for more | >invite'];
@@ -79,7 +64,7 @@ bot.on("ready", async () => {
 
     }, 10000)
 
-  
+      bot.on("message", async message => {
 
       let user = message.mentions.users.first() || message.author;
 
