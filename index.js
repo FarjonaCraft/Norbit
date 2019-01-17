@@ -31,9 +31,7 @@ bot.on("ready", async () => {
       bot.user.setPresence({ game: { name: status}, status: 'online'});
       bot.user.setPresence({ activity: { name: status}, status: 'online'});
     }, 10000)
-});
-
-    bot.on("message", async message => {
+  
       let user = message.mentions.users.first() || message.author;
 
       if(!user) return message.channel.send("User is not defined in this channel!");
