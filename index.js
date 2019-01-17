@@ -58,7 +58,38 @@ if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
 
 message.delete();
    } 
-});
+  
+  let XPuser = message.mentions.users.first() || message.author;
+  let xpAdd = Math.floor(Math.random() * 2) + 2;
+
+  if(!xp[XPuser.id]){
+    xp[XPuser.id] = {
+      xp: 0,
+      level: 1
+    };
+
+  }
+
+  let curxp = xp[XPuser.id].xp;
+  let curlvl = xp[XPuser.id].level;
+  let nxtLvl = xp[XPuser.id].level * 300;
+  
+  xp[XPuser.id].xp =  curxp + xpAdd;
+  if(nxtLvl <= xp[XPuser.id].xp){
+    xp[XPuser.id].level = curlvl + 1;
+
+    let lvlup = new Discord.RichEmbed()
+    .setColor(`RANDOM`)
+    .addField("New Level 🏆", curlvl + 1)
+    .setFooter("Use >level for progress!");
+
+    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
+  }
+
+  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+    if(err) console.log(err)
+
+  });
 
 bot.on("message", async message => {
   if(message.author.bot) return;
