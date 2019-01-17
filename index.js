@@ -76,7 +76,7 @@ bot.on("message", async message => {
   if (message.content.startsWith(prefix)) {
   let commandfile = bot.commands.get(command.slice(prefix.length));
   if(commandfile) commandfile.run(bot, message, args);
-
+  }
 })
 {
 
