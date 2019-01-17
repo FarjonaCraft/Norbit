@@ -64,7 +64,7 @@ bot.on("ready", async () => {
 
     }, 10000)
 
-      bot.on("message", async message => {
+  
 
       let user = message.mentions.users.first() || message.author;
 
