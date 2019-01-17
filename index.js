@@ -51,18 +51,15 @@ bot.on("ready", async () => {
       if(message.content.startsWith (">userinfo")) {
       message.channel.send(embedcoins)
       } 
-
-
-
-
-      //-------------------- scheldwoorden systeem
-      // if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return;
-      const swearWords = ["fuck","tering","gvd","dome","omg","dood","sterf","rip","homo","h0mo","hom0", "kanker", "potver", "fack", "f*ck", "r.i.p.", "kut", "dick", "wtf", "tyfus", "godverdomme", "g0dverd0mme", "g0dverdomme"];
-      if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
-          message.delete();
-        }
-      
   });
+
+
+bot.on("message", async message => {
+const swearWords = ["fuck","tering","gvd","dome","omg","dood","sterf","rip","homo","h0mo","hom0", "kanker", "potver", "fack", "f*ck", "r.i.p.", "kut", "dick", "wtf", "tyfus", "godverdomme", "g0dverd0mme", "g0dverdomme"];
+if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+message.delete();
+}
+});
 
 bot.on("message", async message => {
 
