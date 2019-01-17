@@ -33,10 +33,38 @@ bot.on("ready", async () => {
     }, 10000)
 });
 
+    bot.on("message", async message => {
+      let user = message.mentions.users.first() || message.author;
+
+      if(!user) return message.channel.send("User is not defined in this channel!");
+      let embedcoins = new Discord.RichEmbed()
+      .setAuthor(`${user.tag}'s Information`)
+      .setThumbnail(user.displayAvatarURL)
+      .setColor(`#5eff98`)
+      .addField('Username', user.username, true)
+      .addField('Discrim', user.discriminator, true)
+      .addField('Status', user.presence.status, true)
+      .addField('Bot?', user.bot, true)
+      .addField('Account created at', user.createdAt, false)
+      .setThumbnail(user.displayAvatarURL)
+      .setTimestamp()
+      .setFooter(`Requested by: ${message.author.username}`, message.author.avatarURL);
+
+      if(message.content.startsWith (">userinfo")) {
+      message.channel.send(embedcoins)
+      } 
+
+
+
+
+      //-------------------- scheldwoorden systeem
+      // if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return;
       const swearWords = ["fuck","tering","gvd","dome","omg","dood","sterf","rip","homo","h0mo","hom0", "kanker", "potver", "fack", "f*ck", "r.i.p.", "kut", "dick", "wtf", "tyfus", "godverdomme", "g0dverd0mme", "g0dverdomme"];
       if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
           message.delete();
         }
+      
+  });
 
 bot.on("message", async message => {
 
