@@ -4,6 +4,7 @@ let mistakes = require("../mistakes.json");
 
 //json file maken en daar de errors in schrijven zodat deze het kan lezen!
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   let Idonthavepermission = new Discord.RichEmbed()
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
   .setColor("RED");
