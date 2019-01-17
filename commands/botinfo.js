@@ -7,11 +7,11 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
   .setColor("RED");
   if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
-  let sicon = message.guild.iconURL;
+
 
 const embed = new Discord.RichEmbed()
     .setColor("GREEN")
-    .setThumbnail(`${sicon}`)
+    .setThumbnail(`${bot.user.avatarURL}`)
     .setTitle("Norbit's information", true)
     .addField('Bot Name', "Norbit", true)
     .addField('Guilds', `${bot.guilds.size}`, true)
