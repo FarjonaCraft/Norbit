@@ -17,10 +17,10 @@ module.exports.run = async (bot, message, args) => {
 
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-
-  if(!tomute) return message.reply("Couldn't find user.");
-
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
+  let NoUserEmbed = new Discord.RichEmbed()
+  .setTitle("Incorrect Usage: >mute {user} {reason}")
+  .setColor("RED");NoUserEmbed
+  if(!tomute) return message.channel.send(NoUserEmbed);
 
   let muterole = message.guild.roles.find(c => c.name === "muted");
 
