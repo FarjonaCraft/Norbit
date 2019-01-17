@@ -10,10 +10,8 @@ module.exports.run = async (bot, message, args) => {
   let sicon = message.guild.iconURL;
 
 const embed = new Discord.RichEmbed()
-    .setTitle(`${message.guild.name}'s information`, true)   
-    .addField("Server Name", `${message.guild.name}`, true)
     .setColor("GREEN")
-    .setThumbnail(`${bot.user.avatarURL}`)
+    .setThumbnail(`${siconL}`)
     .setTitle("Norbit's information", true)
     .addField('Bot Name', "Norbit", true)
     .addField('Guilds', `${bot.guilds.size}`, true)
