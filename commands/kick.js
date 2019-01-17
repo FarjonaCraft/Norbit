@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     let Idonthavepermissionkick = new Discord.RichEmbed()
     .setTitle("ERROR: Give me 'KICK_MEMBERS' permission!")
     .setColor("RED");
-    if(message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(Idonthavepermissionkick);
+    if(!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(Idonthavepermissionkick);
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kick~")
