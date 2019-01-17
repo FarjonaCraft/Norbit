@@ -90,6 +90,7 @@ message.delete();
     if(err) console.log(err)
 
   });
+  });
 
 bot.on("message", async message => {
   if(message.author.bot) return;
