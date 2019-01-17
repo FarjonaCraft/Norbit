@@ -28,9 +28,5 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
     "name": "avatar",
-    "category": "Fun",
-    "description": "Shows your avatar!",
-    "aliases": [],
-    "usage": ">avatar",
 
 }
