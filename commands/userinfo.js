@@ -47,7 +47,7 @@ module.exports.help = {
 
 
 
-  name: "!userinfo"
+  name: "userinfo"
 
 
 
