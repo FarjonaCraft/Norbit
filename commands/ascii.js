@@ -3,10 +3,7 @@ const Discord = require("discord.js");
 const ascii = require('ascii-art');
 
 module.exports.run = async (bot, message, args) => {
-    let Idonthavepermission = new Discord.RichEmbed()
-    .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
-    .setColor("RED");
-    if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
+    
     ascii.font(args.join(' '), 'Doom', function(rendered) {
 
         rendered = rendered.trimRight();
