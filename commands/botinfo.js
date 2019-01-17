@@ -7,11 +7,10 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
   .setColor("RED");
   if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
-
-
+let meicon = "https://images-ext-2.discordapp.net/external/V9W-KHTOKnW3LmHuXIb9Z7zMbh_zMRxi6zZ6COO6Ma4/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/503946070737289226/e11a730faa82cdf8b69c775f11a03ddd.png?width=703&height=703"
 const embed = new Discord.RichEmbed()
     .setColor("GREEN")
-    .setThumbnail(`${bot.user.avatarURL}`)
+    .setThumbnail(`${meicon}`)
     .setTitle("Norbit's information", true)
     .addField('Bot Name', "Norbit", true)
     .addField('Guilds', `${bot.guilds.size}`, true)
