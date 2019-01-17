@@ -1,6 +1,6 @@
 //change err compay
 const Discord = require("discord.js");
-let mistakes = require("../mistakes.json");
+
 
 //json file maken en daar de errors in schrijven zodat deze het kan lezen!
 module.exports.run = async (bot, message, args) => {
