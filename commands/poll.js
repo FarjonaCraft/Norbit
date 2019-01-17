@@ -11,7 +11,6 @@ exports.run = async (bot, message, args, ops) => {
 	}
     //   let muterole = message.guild.roles.find(c => c.name === "@everyone");
     // Check for input
-    if (!args[3]) return message.channel.send('Proper usage: a.poll <question>');
     
     // Create Embed
     const embed = new Discord.RichEmbed()
