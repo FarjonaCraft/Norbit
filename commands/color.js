@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-const botconfig = require("../botconfig.json");
-//-----------komt morgen
+
 module.exports.run = async (bot, message, args) => {
   let Idonthavepermission = new Discord.RichEmbed()
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
