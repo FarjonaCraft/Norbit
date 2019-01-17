@@ -12,10 +12,6 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(`Incorrect Usage: >kick {user} {reason}`)
     .setColor("RED");
     if(!kReason) return message.channel.send(Notpermission);
-    let notkick = new Discord.RichEmbed()
-    .setTitle("No permission!")
-    .setColor("RED");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(notkick);
     let Idonthavepermissionkick = new Discord.RichEmbed()
     .setTitle("ERROR: Give me 'KICK_MEMBERS' permission!")
     .setColor("RED");
