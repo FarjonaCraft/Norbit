@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   let noword = new Discord.RichEmbed()
   .setTitle(`Incorrect Usage: >google {search}`)
   .setColor(`RED`); 
-if(!args[0]) return message.reply(noword).then(msg => msg.delete(3000));
+if(!args[0]) return message.channel.send(noword).then(msg => msg.delete(3000));
 
 let link = "https://lmgtfy.com/?q="
 let googlecolors = ['#4285F4', '#34A853', '#FBBC05', '#EA4335']
