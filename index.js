@@ -1,6 +1,11 @@
 const Discord = require("discord.js")
 const config = require("./config.json")
 const bot = new Discord.Client();
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://farjonacraft:z11n.90bf@ds127854.mlab.com:27854/farjonacraft", {
+    useNewUrlParser: true
+});
+const Money = require("./models/money.js")
 const fs = require("fs");
 const ms = require("ms");
 bot.commands = new Discord.Collection();
@@ -103,8 +108,32 @@ bot.on("message", async message => {
   if (message.content.startsWith(prefix)) {
   let commandfile = bot.commands.get(command.slice(prefix.length));
   if(commandfile) commandfile.run(bot, message, args);
+  } else {
+  let coinstoadd = Math.ceil(Math.random() * 1);
+  Money.findOne({
+  userName: message.author.username,
+  userID: message.author.id,
+  serverName: message.guild.name,
+  serverID: message.guild.id
+  }, (err, money) => {
+  if(err) console.log(err);
+  if(!money){
+    const newMoney = new Money({
+      userName: message.author.username,
+      userID: message.author.id,
+      serverName: message.guild.name,
+      serverID: message.guild.id,
+      money: coinstoadd
+    })
+
+    newMoney.save().catch(err => console.log(err));       
+  } else {
+    money.money = money.money + coinstoadd;
+    money.save().catch(err => console.log(err));
+     }
+    })
   }
-})
+});
 
 {
 bot.login(process.env.BOT_TOKEN);
