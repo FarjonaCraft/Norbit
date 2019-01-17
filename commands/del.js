@@ -2,6 +2,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   let Idonthavepermission = new Discord.RichEmbed()
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
   .setColor("RED");
