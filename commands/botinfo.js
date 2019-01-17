@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
 
 const embed = new Discord.RichEmbed()
     .setColor("GREEN")
-    .setThumbnail(`${siconL}`)
+    .setThumbnail(`${sicon}`)
     .setTitle("Norbit's information", true)
     .addField('Bot Name', "Norbit", true)
     .addField('Guilds', `${bot.guilds.size}`, true)
