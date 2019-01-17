@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const config = require("./config.json")
 const bot = new Discord.Client();
 const fs = require("fs");
+const ms = require("ms");
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
