@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor(`RED`); 
         message.channel.send(nouser);
         return;
+     
     } else {
         let user = message.mentions.users.first(); // Mentioned user
         let image = user.displayAvatarURL; // Get image URL
