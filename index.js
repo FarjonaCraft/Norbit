@@ -31,7 +31,7 @@ bot.on("ready", async () => {
       bot.user.setPresence({ game: { name: status}, status: 'online'});
       bot.user.setPresence({ activity: { name: status}, status: 'online'});
     }, 10000)
-
+});
 
 
 bot.on("message", async message => {
