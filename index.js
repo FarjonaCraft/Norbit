@@ -72,6 +72,7 @@ bot.on("message", async message => {
   let prefix = config.prefix;
 
   //checks if message contains a command and runs it
+    if (message.content.startsWith(prefix))
   let commandfile = bot.commands.get(command.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
 })
