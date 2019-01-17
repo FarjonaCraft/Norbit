@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   let NoUserEmbed = new Discord.RichEmbed()
-  .setTitle("Incorrect Usage: >mute {user} {reason}")
+  .setTitle("Incorrect Usage: >mute {user} {time: ms}")
   .setColor("RED");NoUserEmbed
   if(!tomute) return message.channel.send(NoUserEmbed);
 
