@@ -30,6 +30,6 @@ const embed = new Discord.RichEmbed()
 
 module.exports.help = {
 
-  name: "serverinfo"
+  name: "botinfo"
 
 }
