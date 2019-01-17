@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("RED");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(Notpermission);
   let correct1 = new Discord.RichEmbed()
-  .setTitle(`Incorrect Usage: !gamble {amount}`)
+  .setTitle(`Incorrect Usage: >del {amount}`)
   .setColor("RED");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(Notpermission);
   if(!args[0]) return message.channel.send(correct1).then(msg => msg.delete(5000));
