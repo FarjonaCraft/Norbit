@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
   .setColor("RED");
   if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
-let link = ['https://discordapp.com/api/oauth2/authorize?client_id=503946070737289226&permissions=8192&scope=bot']
+let link = ['https://discordapp.com/api/oauth2/authorize?client_id=503946070737289226&permissions=8&scope=bot']
 const embed = new Discord.RichEmbed()
 
     .setColor("GREEN")
