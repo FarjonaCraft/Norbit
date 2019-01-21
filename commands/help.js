@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
   if (!args[0]){
     const infocommands = ['``>botinfo``' + '``>discord``' + '``>donate``' + '``>help``' + '``>invite``' + '``>online``' + '``>serverinfo``' + '``>userinfo``']
-    let economycommands = ['``>antirob``' + '``>bet``' + '``>coins``' + '``>name``' + '``>rich``' + '``>vote``']
+//     let economycommands = ['``>antirob``' + '``>bet``' + '``>coins``' + '``>name``' + '``>rich``' + '``>vote``']
     let funcommands = ['``>ascii``' + '``>color``' + '``>fact``' + '``>google``' + '``>level``' + '``>meme``' + '``>ping``' + '``>speaker``']
     let admincommands = ['``>check``' + '``>del``' + '``>guilds``' + '``>tempmute``' + '``>kick``']
     let prefix = ['Use this prefix for using my commands' + ' ``>``']
@@ -37,7 +37,7 @@ if (args[0] == 'details'){
   .setColor("GREEN")
   .setTimestamp()
   .addField("Here is some information about me:", `${prefix}`)
-  .addField("Use `info`, `eco`, `fun`, `admin` ", `${infocommands}`)
+  .addField("Use `info`, `fun`, `admin` ", `${infocommands}`)
   .setFooter(`Requested by: ${message.author.username}`, message.author.avatarURL);
   message.channel.send(details)
 }
@@ -54,19 +54,19 @@ if (args[0] == 'info'){
     .setFooter(`Requested by: ${message.author.username}`, message.author.avatarURL);
     message.channel.send(embed1)
 }
-if (args[0] == 'eco'){
-    let prefix = ['Use this prefix for using my commands' + ' ``>``']
-    let economycommands = ["``>antirob`` - Get free antirob insurance (5 days) \n" + "``>coins`` - Shows someone`s coins \n" + "``>vote`` - Vote each 12 hours for coins \n" + "``>rich`` - Shows the coin leaderboard \n" + "``>send`` - Pay or give someone coins \n" + "``>bet`` - Bet your money \n"]
-    let embed2 = new Discord.RichEmbed()
-    //------------------------------------------------------------------------------
-    .setAuthor("Norbit's Information", message.guild.iconURL)
-    .setColor("GREEN")
-    .setTimestamp()
-    .addField("Here is some information about me:", `${prefix}`)
-    .addField("Economy Commands", `${economycommands}`)
-    .setFooter(`Requested by: ${message.author.username}`, message.author.avatarURL);
-    message.channel.send(embed2)
-}
+// if (args[0] == 'eco'){
+//     let prefix = ['Use this prefix for using my commands' + ' ``>``']
+//     let economycommands = ["``>antirob`` - Get free antirob insurance (5 days) \n" + "``>coins`` - Shows someone`s coins \n" + "``>vote`` - Vote each 12 hours for coins \n" + "``>rich`` - Shows the coin leaderboard \n" + "``>send`` - Pay or give someone coins \n" + "``>bet`` - Bet your money \n"]
+//     let embed2 = new Discord.RichEmbed()
+//     //------------------------------------------------------------------------------
+//     .setAuthor("Norbit's Information", message.guild.iconURL)
+//     .setColor("GREEN")
+//     .setTimestamp()
+//     .addField("Here is some information about me:", `${prefix}`)
+//     .addField("Economy Commands", `${economycommands}`)
+//     .setFooter(`Requested by: ${message.author.username}`, message.author.avatarURL);
+//     message.channel.send(embed2)
+// }
 if (args[0] == 'fun'){
     let prefix = ['Use this prefix for using my commands' + ' ``>``']
     let funcommands = ['``>ascii`` - Ascii-art, create your own art! \n' + '``>color`` - Magic color command \n' + ' ``>fact`` - For free time\:wink: \n' + ' ``>google`` - way to search on google\n' + ' ``>level`` - Shows current level!\n' + ' ``>meme`` - For free time\:wink:\n'+ ' ``>ping`` - Pong!\n' + ' ``>speaker`` - Time for attention!\n' + ' ``>avatar`` - Shows someone`s avatar \n' + ' ``>poll`` - Runs a poll question \n'+ ' ``>time`` - Offical world time\n'+ ' ``>play`` - Use a url to play a song\n'+ ' ``>stop`` - Stop the song']
