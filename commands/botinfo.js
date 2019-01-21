@@ -16,7 +16,7 @@ const embed = new Discord.RichEmbed()
     .addField('Guilds', `${bot.guilds.size}`, true)
     .addField('Users', `${bot.users.size}`, true)
     .addField('Discord Bot Version', `${Discord.version}`, true)
-    .addField('Uptime', (Math.round(bot.uptime / (1000 * 60 * 60))) + " hours, " + (Math.round(bot.uptime / (1000 * 60)) % 60) + " minutes, and " + (Math.round(bot.uptime / 1000) % 60) + " seconds", true)
+    .addField('Uptime', (Math.round(bot.uptime / (1000 * 60 * 60 * 24))) + " days, " + (Math.round(bot.uptime / (1000 * 60 * 60))) + " hours, " + (Math.round(bot.uptime / (1000 * 60)) % 60) + " minutes, and " + (Math.round(bot.uptime / 1000) % 60) + " seconds", true)
     .setTimestamp()
     .setFooter(`Requested by: ${message.author.username}`, message.author.avatarURL);
     message.channel.send({embed});
