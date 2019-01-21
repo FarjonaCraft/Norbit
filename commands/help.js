@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp()
     .addField("Here is some information about me:", `${prefix}`)
     .addField("Information Commands", `Usage: >help info`)
-    .addField("Economy Commands", `Usage: >help eco`)
+//     .addField("Economy Commands", `Usage: >help eco`)
     .addField("Fun Commands", `Usage: >help fun`)
     .addField("Admin Commands", `Usage: >help admin`)
     .addField("Online Commands:", `[Commands File](${commandlink})`)
