@@ -11,7 +11,7 @@ module.exports.run = (bot, message, args) => {
     let Notpermission = new Discord.RichEmbed()
     .setTitle("You dont have permission to use this command!")
     .setColor("RED");
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(Notpermission);
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission);
     const guildArray = bot.guilds.map((guild) => {
     return `${guild.name} : ${guild.id}`
     })
