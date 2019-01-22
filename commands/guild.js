@@ -6,13 +6,13 @@ module.exports.run = (bot, message, args) => {
     let Idonthavepermission = new Discord.RichEmbed()
     .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
     .setColor("RED");
-    if(!message.member.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
+    if(!message.member.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission).then(msg => msg.delete(5000));
     // Lets define our array of guilds
     
     let Notpermission = new Discord.RichEmbed()
     .setTitle("You dont have permission to use this command!")
     .setColor("RED");
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission);
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission).then(msg => msg.delete(5000));
     const guildArray = bot.guilds.map((guild) => {
     return `${guild.name} : ${guild.id}`
     })
