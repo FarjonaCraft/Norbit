@@ -5,7 +5,7 @@ module.exports.run = (bot, message, args) => {
     let Idonthavepermission = new Discord.RichEmbed()
     .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
     .setColor("RED");
-    if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
+    if(!message.member.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
     // Lets define our array of guilds
     let Notpermission = new Discord.RichEmbed()
     .setTitle("No permission!")
