@@ -1,12 +1,17 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-
+  message.delete();
   let Idonthavepermission = new Discord.RichEmbed()
   .setTitle("ERROR: Give me 'SEND_MESSAGES' permission!")
   .setColor("RED");
   if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
-
+  
+    let Notpermission = new Discord.RichEmbed()
+    .setTitle("You dont have permission to use this command!")
+    .setColor("RED");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission).then(msg => msg.delete(5000));
+  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let noser = new Discord.RichEmbed()
     .setTitle(`Incorrect Usage: >kick {user} {reason}`)
