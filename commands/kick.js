@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-
+      let embed0 = new Discord.RichEmbed()
+    .setTitle(`You dont have permission to use this command!`)
+    .setColor(`RED`); 
+    if(!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(embed0);
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let noser = new Discord.RichEmbed()
     .setTitle(`Incorrect Usage: >kick {user} {reason}`)
