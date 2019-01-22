@@ -7,11 +7,6 @@ module.exports.run = async (bot, message, args) => {
   .setColor("RED");
   if(!message.guild.me.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission).then(msg => msg.delete(5000));
   
-    let Notpermission = new Discord.RichEmbed()
-    .setTitle("You dont have permission to use this command!")
-    .setColor("RED");
-    if(!message.member.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission).then(msg => msg.delete(5000));
-  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let noser = new Discord.RichEmbed()
     .setTitle(`Incorrect Usage: >kick {user} {reason}`)
