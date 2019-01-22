@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+      message.delete();
+      
       let embed0 = new Discord.RichEmbed()
     .setTitle(`You dont have permission to use this command!`)
     .setColor(`RED`); 
