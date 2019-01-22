@@ -7,8 +7,9 @@ module.exports.run = (bot, message, args) => {
     .setColor("RED");
     if(!message.member.hasPermission("SEND_MESSAGES")) return message.channel.send(Idonthavepermission);
     // Lets define our array of guilds
+    
     let Notpermission = new Discord.RichEmbed()
-    .setTitle("No permission!")
+    .setTitle("You dont have permission to use this command!")
     .setColor("RED");
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(Notpermission);
     const guildArray = bot.guilds.map((guild) => {
