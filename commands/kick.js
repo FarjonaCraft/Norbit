@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     let Notpermission = new Discord.RichEmbed()
     .setTitle("You dont have permission to use this command!")
     .setColor("RED");
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission).then(msg => msg.delete(5000));
+    if(!message.member.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission).then(msg => msg.delete(5000));
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let noser = new Discord.RichEmbed()
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
     let Idonthavepermissionkick = new Discord.RichEmbed()
     .setTitle("ERROR: Give me 'KICK_MEMBERS' permission!")
     .setColor("RED");
-    if(message.guild.hasPermission("KICK_MEMBERS")) return message.channel.send(Idonthavepermissionkick);
+    if(message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(Idonthavepermissionkick);
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kick~")
