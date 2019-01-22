@@ -5,12 +5,16 @@ const ms = require("ms");
 
 
 module.exports.run = async (bot, message, args) => {
+  message.delete();
   let Idonthavepermission = new Discord.RichEmbed()
   .setTitle("ERROR: Give me 'MUTE_MEMBERS' permission!")
   .setColor("RED");
-  if(!message.guild.me.hasPermission("MUTE_MEMBERS")) return message.channel.send(Idonthavepermission);
+  if(!message.guild.me.hasPermission("MUTE_MEMBERS")) return message.channel.send(Idonthavepermission).then(msg => msg.delete(5000));
 
-
+  let Notpermission = new Discord.RichEmbed()
+  .setTitle("You dont have permission to use this command!")
+  .setColor("RED");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(Notpermission).then(msg => msg.delete(5000));
 
   //!tempmute @user 1s/m/h/d
 
