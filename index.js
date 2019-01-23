@@ -99,7 +99,7 @@ bot.on("ready", async () => {
       if(message.content.startsWith (">userinfo")) {
 
       message.channel.send(embedcoins)
-
+//new
       } 
 
   });
