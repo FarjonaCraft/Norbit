@@ -82,7 +82,7 @@ if (args[0] == 'fun'){
 }
 if (args[0] == 'admin'){
     let prefix = ['Use this prefix for using my commands' + ' ``>``']
-    let modcommands = ['``>check`` - Show if there is an error! \n' + '``>del`` - Delete messages \n' + '``>guilds`` - Show all invited servers! \n' + '``>tempute`` - Mute someone for a time! \n' + '``>kick`` - Kick someone out of the server! \n' ]
+    let modcommands = ['``>check`` - Show if there is an error! \n' + '``>del`` - Delete messages \n' + '``>guilds`` - Show all invited servers! \n' + '``>tempmute`` - Mute someone for a time! \n' + '``>kick`` - Kick someone out of the server! \n' ]
     let embed4 = new Discord.RichEmbed()
     //------------------------------------------------------------------------------
     .setAuthor("Norbit's Information", message.guild.iconURL)
